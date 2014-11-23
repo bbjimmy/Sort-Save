@@ -1,7 +1,7 @@
 NAME= sort-save
 TYPE= SHARED
 SRCS= sort_save.cpp
-RSRCS= ss.icon.rsc
+RSRCS= ss.icon.rsrc
 LIBS= /boot/system/lib/libbe.so
 LIBPATHS=
 SYSTEM_INCLUDE_PATHS= /boot/develop/headers/be /boot/develop/headers/cpp /boot/develop/headers/posix /boot/develop/lib /boot/beos/system/lib
