@@ -220,14 +220,6 @@ int hit;
 	
 }
 
-//_________________________________________________________________
-
-
-void sortselect()
-
-{
-	
-}
 
 //_________________________________________________________________
 
@@ -351,11 +343,6 @@ for (j=1; j<50; j++)
 
 void bubblesort(BView *view, int colors)
 {
-	/*
-The bubblesort cycles through the array, comparing adjacent elements
-and swapping pairs that are out of order. It continues to do this 
-until no pairs are swapped.
-*/
 
 int test = 49;
 int j;
@@ -396,11 +383,6 @@ sortfinish(view, colors);
 void PercolateDown(BView *view, int colors, int MaxLevel)
 
 
-/*' ============================ PercolateDown =================================
-'   The PercolateDown procedure restores the elements of SortArray from 1 to
-'   MaxLevel to a "heap" (see the diagram with the HeapSort procedure).
-' ============================================================================
-*/
 {
 	
 	int i = 1;
@@ -443,12 +425,7 @@ void PercolateDown(BView *view, int colors, int MaxLevel)
 
 void PercolateUp(BView *view, int colors, int MaxLevel)
 
-/*
-' ============================== PercolateUp =================================
-'   The PercolateUp procedure converts the elements from 1 to MaxLevel in
-'   SortArray into a "heap" (see the diagram with the HeapSort procedure).
-' ============================================================================
-*/
+
 {
 int i=MaxLevel;
 int Parent;
@@ -479,36 +456,6 @@ while (i != 1)
 
 void HeapSort(BView *view, int colors)
 
-
-/*
-===================================
-'  The HeapSort procedure works by calling two other procedures - PercolateUp
-'  and PercolateDown.  PercolateUp turns SortArray into a "heap," which has
-'  the properties outlined in the diagram below:
-'
-'                               SortArray(1)
-'                               /          \
-'                    SortArray(2)           SortArray(3)
-'                   /          \            /          \
-'         SortArray(4)   SortArray(5)   SortArray(6)  SortArray(7)
-'          /      \       /       \       /      \      /      \
-'        ...      ...   ...       ...   ...      ...  ...      ...
-'
-'
-'  where each "parent node" is greater than each of its "child nodes"; for
-'  example, SortArray(1) is greater than SortArray(2) or SortArray(3),
-'  SortArray(3) is greater than SortArray(6) or SortArray(7), and so forth.
-'
-'  Therefore, once the first FOR...NEXT loop in HeapSort is finished, the
-'  largest element is in SortArray(1).
-'
-'  The second FOR...NEXT loop in HeapSort swaps the element in SortArray(1)
-'  with the element in MaxRow, rebuilds the heap (with PercolateDown) for
-'  MaxRow - 1, then swaps the element in SortArray(1) with the element in
-'  MaxRow - 1, rebuilds the heap for MaxRow - 2, and continues in this way
-'  until the array is sorted.
-' ============================================================================
-*/
 
 
 {
@@ -605,16 +552,7 @@ sortfinish(view, colors);
 }
 
 //_________________________________________________________________
-/*
-' ============================= InsertionSort ================================
-'   The InsertionSort procedure compares the length of each successive
-'   element in SortArray with the lengths of all the preceding elements.
-'   When the procedure finds the appropriate place for the new element, it
-'   inserts the element in its new place, and moves all the other elements
-'   down one place.
-' ============================================================================
-'
-*/
+
 
 
 void insertionsort(BView *view, int colors)
@@ -635,11 +573,7 @@ void insertionsort(BView *view, int colors)
 		 
 		
 		for ( j = jj; j > 1; j-- )
-		/*
-			As long as the length of the J-1 element is greater than the
-          	length of the original element in SortArray(Row), keep shifting
-          	the array elements down:
-        */  
+		
 		{
 					
 					
@@ -656,7 +590,7 @@ void insertionsort(BView *view, int colors)
 				swapbars(view,j,j-1,colors);
 				
 				
-				//printonebar(view,colors,j);
+				
 			}
 			else
 			break;
@@ -1107,7 +1041,7 @@ while (jjj < 50)
 	}	
 			
 			
-	//r.left =  screenwidth;
+	
 	r.bottom = r.top + bhight;
 	r.right = r.left + (barlength*wid);
 	if (r.right > screenwidth)
@@ -1115,8 +1049,6 @@ while (jjj < 50)
 		r.right = screenwidth - (r.right-screenwidth);
 		r.left =  r.right - (barlength*wid);
 	}
-	//hit = (rand() % view->Bounds().IntegerHeight());
-	//wid = (rand() % view->Bounds().IntegerWidth());
 	
 			
 	
@@ -1140,7 +1072,7 @@ while (jjj < 50)
 	else
 	view->FillRoundRect(r, 0, 0, B_SOLID_HIGH);
 	
-	//view->FillRect(r, B_SOLID_HIGH);
+	
 	
 usleep(10000);	
 jjj = jjj +1;
@@ -1617,27 +1549,7 @@ if (colors == 21)
 			r+= ((bar-48)*step);
 		}		
 	
-		/*
-		if ((bar > 35)&(bar <=40))
-		{
-			r=250;
-			b=250;
-			b= b - ((bar-35)*step);
 		
-		}
-		if ((bar > 40)&(bar <=45))
-		{
-			r=250;
-			g+= ((bar-40)*step);
-		}
-		if ((bar > 45)&(bar <=50))
-		{
-			g=250;
-			r=250;
-			r=r - ((bar-45)*step);
-			
-		}
-		*/
 		
 		Red = r;
 		Blue = b;
