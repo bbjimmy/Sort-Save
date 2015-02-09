@@ -912,13 +912,19 @@ h1 = (rand() %32);
 		
 	
 	
-	if (colors >= 2000)
-	colors = 1;
+	if ((colors >= 2000) & (colors < 2200)){
+		
+		colors = 25;
+		palate1.setrandom();
+	}
 	
-	//colors=22;
+	if (colors >= 2200){
+	colors = 23;
+	palate1.setrandom();
+	}
 	
 	
-	
+		
 	bar [0][0] = colors;
 	return colors;	
 }
@@ -1186,14 +1192,7 @@ void colorpicker::setrandom ()
 	
 	g = (rand() % 250);
 	
-	if (r<25)
-	 r=r+50;
-	 
-	if (g<25)
-	 g=g+50;
-	 
-	if (b<25)
-	 b=b+50;
+	
 	
 	
 	ranr=r;
@@ -1560,18 +1559,25 @@ if (colors == 21)
 	
 	if (colors==23)
 	{
-		if (ranr>125)		
-			Red = ranr-(2*bar);
+		if (ranr>126)		
+			Red = ranr-(2.5*bar);
 		else
-			Red = ranr+(2*bar);
-		if (ranb > 125)
-			Blue = ranb-(2*bar); 
+			Red = ranr+(2.5*bar);
+		if (ranb > 126)
+			Blue = ranb-(2.5*bar); 
 		else		  
-			Blue = ranb+(2*bar);
-		if (rang > 125)
-		 	Green = rang-(2*bar);
+			Blue = ranb+(2.5*bar);
+		if (rang > 126)
+		 	Green = rang-(2.5*bar);
 		else
-		 	Green = rang+(2*bar);
+		 	Green = rang+(2.5*bar);
+	}
+	
+	if (colors==25)
+	{
+		Red = ranr;
+		Blue = ranb;
+		Green = rang;
 	}
 	
 	
