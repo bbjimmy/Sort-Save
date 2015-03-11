@@ -9,6 +9,7 @@
 #include <OS.h>
 // MAIN INSTANTIATION FUNCTION
 int x=260;
+int cswitch = 0;
 int swp;
 unsigned int count;
 int bar[50][4];
@@ -905,6 +906,8 @@ h1 = (rand() %32);
 		
 		colors = 23;
 		palate1.setrandom();
+		cswitch++;
+		if (cswitch>3) cswitch=0;
 	}
 	
 	if ((colors >= 1800) & (colors < 2000))
@@ -920,6 +923,8 @@ h1 = (rand() %32);
 	
 	if (colors >= 2200){
 	colors = 23;
+	cswitch++;
+	if (cswitch>3) cswitch=0;
 	palate1.setrandom();
 	}
 	
@@ -1558,7 +1563,9 @@ if (colors == 21)
 	
 	
 	if (colors==23)
-	{
+	{	
+		if (cswitch==0)
+		{
 		if (ranr>126)		
 			Red = ranr-(2.5*bar);
 		else
@@ -1571,6 +1578,60 @@ if (colors == 21)
 		 	Green = rang-(2.5*bar);
 		else
 		 	Green = rang+(2.5*bar);
+		} 
+		
+		
+		if (cswitch==1)
+		{
+		Red=ranr;
+		if (ranb > 126)
+			Blue = ranb-(2.5*bar); 
+		else		  
+			Blue = ranb+(2.5*bar);
+		if (rang > 126)
+		 	Green = rang-(2.5*bar);
+		else
+		 	Green = rang+(2.5*bar);
+		} 
+		
+		if (cswitch==2)
+		{
+		Blue=ranb;
+		if (ranr>126)		
+			Red = ranr-(2.5*bar);
+		else
+			Red = ranr+(2.5*bar);
+		
+		if (rang > 126)
+		 	Green = rang-(2.5*bar);
+		else
+		 	Green = rang+(2.5*bar);
+		} 
+		
+		if (cswitch==3)
+		{
+		Green=rang;
+		if (ranr>126)		
+			Red = ranr-(2.5*bar);
+		else
+			Red = ranr+(2.5*bar);
+		if (ranb > 126)
+			Blue = ranb-(2.5*bar); 
+		else		  
+			Blue = ranb+(2.5*bar);
+		
+		} 
+		
+		
+		
+		
+		
+		
+		
+		
+			
+		 	
+		 	
 	}
 	
 	if (colors==25)
