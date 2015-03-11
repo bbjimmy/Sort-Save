@@ -24,3 +24,15 @@ resource vector_icon  {
 	$"011815FF01178400040A00010118001501178600040A030102000A050103000A"
 	$"08010400"
 };
+
+resource app_version {
+	major  = 1,
+	middle = 1,
+	minor  = 0,
+
+	variety = B_APPV_BETA,
+	internal = 0,
+
+	short_info = "sort-save",
+	long_info = "sort-save screensaver ©2013-2015 Jim Saxton, Fat Elk Software"
+};
