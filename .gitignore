@@ -1,0 +1,5 @@
+sort-save
+obj.x86
+dep
+*.o
+*.d
